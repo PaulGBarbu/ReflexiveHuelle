@@ -1,0 +1,39 @@
+<html>
+<body>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<script src="springy.js"></script>
+<script src="springyui.js"></script>
+
+
+<script>
+var graphJSON;
+
+$.getJSON("graph.json", function(json) {
+  graphJSON = json;
+  
+  jQuery(function(){
+  var graph = new Springy.Graph();
+  graph.loadJSON(graphJSON);
+
+  var springy = jQuery('#springydemo').springy({
+    graph: graph
+  });
+});
+});
+
+
+jQuery(function(){
+  var graph = new Springy.Graph();
+  graph.loadJSON(graphJSON);
+
+  var springy = jQuery('#springydemo').springy({
+    graph: graph
+  });
+});
+</script>
+
+<canvas id="springydemo" width="640" height="480" />
+
+
+</body>
+</html>
